@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header {
+    background-image: url('/src/assets/img/coffee-bg.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+      
+}
+
+@media (min-width:768px){
+    .header{
+        height: 600px;
+    }
+}
+
+@layer base {
+    .btn-cafe {
+        @apply px-6 py-3 bg-amber-200  shadow-lg text-black font-bold uppercase hover:cursor-pointer hover:bg-amber-300 active:bg-amber-500 transition-colors;
+    }
+}
