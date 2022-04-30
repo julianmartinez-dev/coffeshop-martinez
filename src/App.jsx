@@ -5,9 +5,7 @@ function App() {
   return (
     <>
       <Header />
-      <ItemListContainer
-        huesped="Flavio"
-      />
+      <ItemListContainer/>
     </>
   );
 }

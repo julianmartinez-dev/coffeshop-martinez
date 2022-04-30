@@ -1,14 +1,28 @@
+import { useState, useEffect } from "react";
+import { getProducts } from "../helpers/getProducts";
+import ItemList from "./ItemList";
+import Spinner from "./spinner/Spinner";
 
-const ItemListContainer = ({huesped}) => {
- 
+const ItemListContainer = () => {
+
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    getProducts()
+      .then(data => setProducts(data))
+      .catch(error => console.log(error))
+      .finally(() => setLoading(false));
+  },[])
+
 
   return (
-    <main className="bg-slate-300 flex justify-center items-center h-96">
-      <div className="text-center">
-        <h1 className="mb-3 text-3xl font-bold">Hola <span className=" underline decoration-wavy decoration-amber-500">{huesped}</span> Bienvenido a mi proyecto</h1>
-        <h2 className="text-4xl font-bold">CoffeeShop - Ecommerce</h2>
-        <h3 className="mt-3">Julián Martínez - Coderhouse</h3>
-      </div>
+    <main className="bg-slate-300 min-h-screen px-3">
+      <h1 className="text-center text-4xl pt-5 font-bold">Los artículos más populares</h1>
+        {
+          loading ? <Spinner /> : <ItemList products={products} />
+        } 
     </main>
   );
 }
