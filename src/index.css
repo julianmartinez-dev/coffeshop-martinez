@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .header {
-    background-image: url('/src/assets/img/coffee-bg.jpg');
+    background-image: url('/img/coffee-bg.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
