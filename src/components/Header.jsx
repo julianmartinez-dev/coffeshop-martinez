@@ -8,7 +8,7 @@ const Header = () => {
         <div className="border-2 p-3 rounded-xl border-amber-200 shadow-slate-50/50 text-slate-200">
           <div className="flex items-center gap-2 text-4xl font-semibold">
             <img
-              src="src/assets/img/coffee-beans.png"
+              src={`/img/coffee-beans.png`}
               alt=""
               className="w-12"
             />

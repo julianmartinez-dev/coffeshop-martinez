@@ -1,5 +1,6 @@
 import { priceFormat } from "../helpers/priceFormat";
 
+
 const Item = ({ brand, name, price, description, slug }) => {
   return (
     <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
@@ -7,7 +8,7 @@ const Item = ({ brand, name, price, description, slug }) => {
         <img
           alt="ecommerce"
           className="object-cover object-center w-full h-full block"
-          src={`src/assets/img/${slug}.jpg`}
+          src={ `/img/${slug}.jpg` }
         />
       </div>
       <div className="mt-4 text-center">
