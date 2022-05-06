@@ -1,7 +1,8 @@
 import { priceFormat } from "../helpers/priceFormat";
+import { Link } from "react-router-dom";
 
 
-const Item = ({ brand, name, price, description, slug }) => {
+const Item = ({ brand, name, price, description, slug, id }) => {
   return (
     <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
       <div className="block relative h-48 rounded overflow-hidden">
@@ -20,7 +21,9 @@ const Item = ({ brand, name, price, description, slug }) => {
         <p className="mt-2">{description.slice(0, 35) + '...'}</p>
       </div>
       <div className="flex justify-around mt-4">
-        <button className="btn-cafe">Ver mas</button>
+        <Link to={`/item/${id}`}>
+            <button className="btn-cafe">Ver mas</button>
+        </Link>
         <button className="btn-cafe">Comprar</button>
       </div>
     </div>

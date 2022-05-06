@@ -18,7 +18,8 @@ const ItemListContainer = () => {
 
 
   return (
-    <main className="bg-slate-300 min-h-screen px-3">
+    <main className=" min-h-screen px-3">
+      
       <h1 className="text-center text-4xl pt-5 font-bold">Los artículos más populares</h1>
         {
           loading ? <Spinner /> : <ItemList products={products} />
