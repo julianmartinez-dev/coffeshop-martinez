@@ -1,25 +1,80 @@
-import { Link, NavLink } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
-import NavBar from './NavBar';
 
 const Header = () => {
   return (
-    <div className="w-full header">
-      <div className="md:w-2/3 mx-auto flex flex-col gap-4 md:flex-row justify-between pt-5 items-center ">
+    <div className="navbar fixed mx-auto bg-transparent/40 z-10  h-32 md:px-32 backdrop-blur-sm">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <label tabIndex="0" className="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="white"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex="0"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-transparent/90 rounded-box w-48 lg:w-96 text-slate-300"
+          >
+            <li>
+              <button className="active:bg-white active:text-black font-bold md:text-xl">
+                Todos los productos
+              </button>
+            </li>
+            <li>
+              <button className="active:bg-white active:text-black font-bold md:text-xl">
+                Cápsulas
+              </button>
+            </li>
+            <li>
+              <button className="active:bg-white active:text-black font-bold md:text-xl">
+                Café Molido
+              </button>
+            </li>
+            <li>
+              <button className="active:bg-white active:text-black font-bold md:text-xl">
+                Descafeinados
+              </button>
+            </li>
+            <li>
+              <button className="active:bg-white active:text-black font-bold md:text-xl">
+                Accesorios
+              </button>
+            </li>
+            <li>
+              <button className="active:bg-white active:text-black font-bold md:text-xl">
+                Máquinas
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="navbar-center">
         <Link to="/">
-          <div className="border-2 p-3 rounded-xl border-amber-200 shadow-slate-50/50 text-slate-200">
-            <div className="flex items-center gap-2 text-4xl font-semibold">
-              <img src={`/img/coffee-beans.png`} alt="" className="w-12" />
-              <p>Coffee Shop</p>
-            </div>
-            <p className="text-center text-md">Café de autor, donde estes</p>
+          <div className="btn btn-outline ">
+            <img
+              src="/img/coffee-beans.png"
+              alt="imagen logo"
+              className="w-8 mr-2"
+            />
+            <p className="text-2xl text-white">Coffee Shop</p>
           </div>
         </Link>
-
+      </div>
+      <div className="navbar-end">
         <CartWidget />
       </div>
-
-      <NavBar />
     </div>
   );
 };

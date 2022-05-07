@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 const Error = () => {
 
   const [countDown, setCountDown] = useState(5);
@@ -21,7 +22,7 @@ const Error = () => {
   }, [countDown]);
 
   return (
-    <div className=" flex flex-col justify-center items-center min-h-screen">
+    <div className=" flex flex-col justify-center items-center min-h-screen text-slate-300">
       <h1 className="text-4xl font-bold underline decoration-wavy decoration-amber-600 mb-3">
         404
       </h1>
@@ -33,7 +34,7 @@ const Error = () => {
         className="md:w-1/2 mt-5"
       />
 
-     <p>Serás redirigido a la pagina principal en: {countDown}</p>
+     <p>Serás redirigido a la página principal en: {countDown}</p>
     </div>
   );
 }

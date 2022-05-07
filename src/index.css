@@ -7,10 +7,13 @@
     height: 100vh;
     background-size: cover;
     background-position: center;
+    
       
 }
 body{
-    background-color: #F4E5E0;
+    background: rgb(13, 13, 15);
+    background: linear-gradient(3deg, rgba(13, 13, 15, 1) 35%, rgba(20, 20, 22, 1) 100%);
+   
 }
 
 @media (min-width:768px){
@@ -19,9 +22,25 @@ body{
     }
 }
 
+
+
+
+
 @layer base {
-    .btn-cafe {
-        @apply px-6 py-3 bg-amber-200  shadow-lg rounded-xl text-black font-bold uppercase hover:cursor-pointer hover:bg-amber-300 active:bg-amber-500 transition-colors;
+    .btn-white {
+        @apply border-2 px-6 py-2 text-slate-300 transition-colors duration-300 uppercase font-bold;
+        @apply hover:bg-gray-50 hover:text-black ;
+    }
+    
+}
+
+@layer utilities{
+    .text-5xl {
+        font-size: 3.5rem;
     }
 }
+
+
+
+
 

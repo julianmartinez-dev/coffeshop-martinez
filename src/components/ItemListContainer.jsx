@@ -18,13 +18,14 @@ const ItemListContainer = () => {
 
 
   return (
-    <main className=" min-h-screen px-3">
-      
-      <h1 className="text-center text-4xl pt-5 font-bold">Los artículos más populares</h1>
-        {
-          loading ? <Spinner /> : <ItemList products={products} />
-        } 
-    </main>
+    <>
+      <h1 className="text-center text-4xl py-5 font-bold bg-gray-50">
+        Los artículos más populares
+      </h1>
+      <main className="px-3">
+        {loading ? <Spinner /> : <ItemList products={products} />}
+      </main>
+    </>
   );
 }
 

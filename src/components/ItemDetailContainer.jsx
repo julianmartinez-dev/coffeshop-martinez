@@ -26,11 +26,11 @@ const ItemDetailContainer = () => {
       );
   }
 
-  return(
-      <div className='h-screen'>
-        {loading ? <Spinner /> : <ItemDetail item={item} />}
-      </div>
-  )
+  return (
+    <div>
+      {loading ? <Spinner /> : <ItemDetail item={item} />}
+    </div>
+  );
 }
 
 export default ItemDetailContainer

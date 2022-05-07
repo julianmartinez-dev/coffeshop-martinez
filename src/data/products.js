@@ -5,6 +5,7 @@ export const products = [
     brand: 'Starbucks',
     price: 10,
     stock: 20,
+    category: 'Café Molido',
     slug: 'breakfast-blend',
     decaf: false,
     description:
@@ -15,7 +16,8 @@ export const products = [
     name: 'French',
     brand: 'Starbucks',
     price: 10,
-    stock: 20,
+    stock: 0,
+    category: 'Café Molido',
     slug: 'french',
     decaf: false,
     description:
@@ -27,6 +29,7 @@ export const products = [
     brand: "Peet's",
     price: 8,
     stock: 20,
+    category: 'Café Molido',
     slug: 'dark-roast',
     decaf: false,
     description:
@@ -39,6 +42,7 @@ export const products = [
     brand: 'Amazon Fresh',
     price: 8,
     stock: 20,
+    category: 'Café Molido',
     slug: 'dark-roast-amazon',
     decaf: false,
     description:
@@ -50,6 +54,7 @@ export const products = [
     brand: 'Amazon Fresh',
     price: 8,
     stock: 20,
+    category: 'Café Molido',
     slug: 'colombia-amazon',
     decaf: false,
     description:
@@ -61,6 +66,7 @@ export const products = [
     brand: 'Starbucks',
     price: 10,
     stock: 20,
+    category: 'Café Molido',
     slug: 'house-blend',
     decaf: false,
     description:
@@ -72,6 +78,7 @@ export const products = [
     brand: 'Shock',
     price: 15,
     stock: 20,
+    category: 'Café Molido',
     slug: 'strongest-caffeinated',
     decaf: false,
     description:
@@ -83,6 +90,7 @@ export const products = [
     brand: "Peet's",
     price: 8,
     stock: 20,
+    category: 'Café Molido',
     slug: 'alma-de-la-tierra',
     decaf: false,
     description:
