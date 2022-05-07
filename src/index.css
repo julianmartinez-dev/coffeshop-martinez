@@ -2,29 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.header {
-    background-image: url('/img/coffee-bg.jpg');
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    
-      
-}
 body{
     background: rgb(13, 13, 15);
     background: linear-gradient(3deg, rgba(13, 13, 15, 1) 35%, rgba(20, 20, 22, 1) 100%);
    
 }
-
-@media (min-width:768px){
-    .header{
-        height: 600px;
-    }
-}
-
-
-
-
 
 @layer base {
     .btn-white {
@@ -39,8 +21,3 @@ body{
         font-size: 3.5rem;
     }
 }
-
-
-
-
-
