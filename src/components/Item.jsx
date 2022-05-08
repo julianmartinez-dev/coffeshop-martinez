@@ -1,8 +1,14 @@
 import { priceFormat } from "../helpers/priceFormat";
 import { Link } from "react-router-dom";
+import CoffeeShopContext from "../context/CoffeeShopProvider";
+import { useContext } from "react";
 
+const Item = ({ item }) => {
 
-const Item = ({ brand, name, price, description, slug, id }) => {
+  const { addToCart } = useContext(CoffeeShopContext)
+
+  const { brand, name, price, description, slug, id } = item;
+
   return (
     <div className="card bg-transparent/80 shadow-sm shadow-amber-500/20">
       <figure className="px-10 pt-10 ">
@@ -13,7 +19,12 @@ const Item = ({ brand, name, price, description, slug, id }) => {
         <h3 className=" font-bold text-xl">{name}</h3>
         <p>{description.slice(0, 70) + '...'}</p>
         <div className="mt-3 flex justify-evenly w-full">
-          <button className="btn-white">Comprar</button>{' '}
+          <button
+            className="btn-white"
+            onClick={() => addToCart({ ...item, quantity: 1 })}
+          >
+            Comprar
+          </button>{' '}
           <Link to={`/item/${id}`}>
             <button className="btn-white">Ver mas</button>{' '}
           </Link>

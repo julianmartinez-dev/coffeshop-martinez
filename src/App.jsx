@@ -5,21 +5,23 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import { CoffeeShopProvider } from './context/CoffeeShopProvider';
 function App() {
 
   return (
     <>
       <BrowserRouter>
-      <Header />
-      <Hero />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/category/:id" element={<ItemListContainer />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
-        </Routes>
-      <Footer />
+        <CoffeeShopProvider>
+          <Header />
+          <Hero />
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/category/:id" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+          </Routes>
+          <Footer />
+        </CoffeeShopProvider>
       </BrowserRouter>
-      {/* <ItemListContainer /> */}
     </>
   );
 }

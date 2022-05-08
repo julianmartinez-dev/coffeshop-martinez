@@ -1,8 +1,13 @@
-import React from 'react'
+import { useContext } from 'react';
+import CoffeeShopContext from '../context/CoffeeShopProvider';
+
 
 import { priceFormat } from '../helpers/priceFormat';
 
 const ItemDetail = ({item}) => {
+
+  const { addToCart } = useContext(CoffeeShopContext);
+
   return (
     <section className="text-slate-300 overflow-hidden animate__animated animate__fadeIn md:mt-24">
       <div className="container px-5 py-24 mx-auto shadow-xl shadow-slate-300/20">
@@ -36,6 +41,7 @@ const ItemDetail = ({item}) => {
               </span>
               <button className="flex ml-auto items-center gap-2 font-bold btn-cafe btn-white disabled:hidden"
                 disabled={!item.stock}
+                onClick={() => addToCart({ ...item, quantity: 1 })}
               >
                 Comprar
               </button>
