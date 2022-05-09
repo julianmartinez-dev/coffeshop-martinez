@@ -15,18 +15,24 @@ const Error = () => {
       navigate('/');
     }
   }
+  useEffect(() => {
+    //Scroll to error message
+    document.getElementById('404').scrollIntoView({behavior: 'smooth'});
+  },[])
 
   useEffect(() => {
     const interval = setInterval(countdown, 1000);
     return () => clearInterval(interval);
   }, [countDown]);
 
+
+
   return (
-    <div className=" flex flex-col justify-center items-center min-h-screen text-slate-300">
+    <div className=" flex flex-col justify-center items-center min-h-screen text-slate-300" id='404'>
       <h1 className="text-4xl font-bold underline decoration-wavy decoration-amber-600 mb-3">
         404
       </h1>
-      <h2 className='text-3xl'>Producto no encontrado</h2>
+      <h2 className='text-3xl'>Not Found</h2>
       
       <img
         src="/img/undraw_feeling_blue_-4-b7q.svg"

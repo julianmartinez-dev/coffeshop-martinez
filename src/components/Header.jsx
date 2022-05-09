@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
+import NavButton from './NavButton';
 
 const Header = () => {
   return (
@@ -28,34 +29,22 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-transparent/90 rounded-box w-48 lg:w-96 text-slate-300"
           >
             <li>
-              <button className="active:bg-white active:text-black font-bold md:text-xl">
-                Todos los productos
-              </button>
+              <NavButton path="Ver todo" />
             </li>
             <li>
-              <button className="active:bg-white active:text-black font-bold md:text-xl">
-                Cápsulas
-              </button>
+              <NavButton path="Cápsulas" />
             </li>
             <li>
-              <button className="active:bg-white active:text-black font-bold md:text-xl">
-                Café Molido
-              </button>
+              <NavButton path="Café Molido" />
             </li>
             <li>
-              <button className="active:bg-white active:text-black font-bold md:text-xl">
-                Descafeinados
-              </button>
+              <NavButton path="Descafeinados" />
             </li>
             <li>
-              <button className="active:bg-white active:text-black font-bold md:text-xl">
-                Accesorios
-              </button>
+              <NavButton path="Accesorios" />
             </li>
             <li>
-              <button className="active:bg-white active:text-black font-bold md:text-xl">
-                Máquinas
-              </button>
+              <NavButton path="Máquinas" />
             </li>
           </ul>
         </div>
