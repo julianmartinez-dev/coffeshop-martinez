@@ -32,7 +32,7 @@ const CoffeeShopProvider = ({ children }) => {
     if (cart.some((article) => article.id === item.id)) {
       //If it is, increase the quantity
       const cartUpdated = cart.map((article) => {
-        if (article._id === item._id) {
+        if (article.id === item.id) {
           article.quantity += 1;
         }
         return article;
@@ -65,6 +65,10 @@ const CoffeeShopProvider = ({ children }) => {
     setCart(cartUpdated);
   };
 
+  const emptyCart = () => {
+    setCart([]);
+  }
+
   return (
     <CoffeeShopContext.Provider
       value={{
@@ -73,6 +77,7 @@ const CoffeeShopProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
+        emptyCart
       }}
     >
       {children}

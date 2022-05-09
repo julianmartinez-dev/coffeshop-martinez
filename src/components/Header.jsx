@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CartWidget from './CartWidget';
+import CartWidget from './Cart/CartWidget';
 import NavButton from './NavButton';
 
 const Header = () => {
   return (
-    <div className="navbar fixed mx-auto bg-transparent/40 z-10  h-32 md:px-32 backdrop-blur-sm">
+    <header className="navbar fixed mx-auto bg-transparent/40 z-10  h-32 md:px-32 backdrop-blur-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost btn-circle">
@@ -64,7 +64,7 @@ const Header = () => {
       <div className="navbar-end">
         <CartWidget />
       </div>
-    </div>
+    </header>
   );
 };
 
