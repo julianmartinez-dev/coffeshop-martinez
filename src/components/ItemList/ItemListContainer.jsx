@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { getProducts } from "../helpers/getProducts";
+import { getProducts } from "../../helpers/getProducts";
 import ItemList from "./ItemList";
-import Spinner from "./spinner/Spinner";
+import Spinner from "../spinner/Spinner";
 
 const ItemListContainer = () => {
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getItemByID } from '../helpers/getItemByID'
-import Spinner from './spinner/Spinner'
+import { getItemByID } from '../../helpers/getItemByID'
+import Spinner from '../spinner/Spinner'
 import ItemDetail from './ItemDetail'
-import Error from './404';
+import Error from '../404'
 
 const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);

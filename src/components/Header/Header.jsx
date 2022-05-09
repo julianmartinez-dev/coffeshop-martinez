@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CartWidget from './Cart/CartWidget';
+import CartWidget from '../Cart/CartWidget';
 import NavButton from './NavButton';
 
 const Header = () => {

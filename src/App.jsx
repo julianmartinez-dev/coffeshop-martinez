@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from './components/ItemDetailContainer';
+import Header from './components/Header/Header';
+import ItemListContainer from "./components/ItemList/ItemListContainer";
+import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import Hero from './components/Hero';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import { CoffeeShopProvider } from './context/CoffeeShopProvider';
 function App() {
 

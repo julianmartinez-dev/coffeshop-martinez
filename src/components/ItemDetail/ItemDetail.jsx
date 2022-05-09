@@ -1,8 +1,6 @@
 import { useContext } from 'react';
-import CoffeeShopContext from '../context/CoffeeShopProvider';
-
-
-import { priceFormat } from '../helpers/priceFormat';
+import CoffeeShopContext from '../../context/CoffeeShopProvider';
+import { priceFormat } from '../../helpers/priceFormat';
 
 const ItemDetail = ({item}) => {
 

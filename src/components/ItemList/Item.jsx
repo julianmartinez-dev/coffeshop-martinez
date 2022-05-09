@@ -1,13 +1,12 @@
-import { priceFormat } from "../helpers/priceFormat";
 import { Link } from "react-router-dom";
-import CoffeeShopContext from "../context/CoffeeShopProvider";
+import CoffeeShopContext from "../../context/CoffeeShopProvider";
 import { useContext } from "react";
 
 const Item = ({ item }) => {
 
   const { addToCart } = useContext(CoffeeShopContext)
 
-  const { brand, name, price, description, slug, id } = item;
+  const { brand, name, description, slug, id } = item;
 
   return (
     <div className="card bg-transparent/80 shadow-sm shadow-amber-500/20">
