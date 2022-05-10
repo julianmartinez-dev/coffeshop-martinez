@@ -5,6 +5,8 @@ import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import Hero from './components/Hero';
 import Footer from './components/Footer/Footer';
 import { CoffeeShopProvider } from './context/CoffeeShopProvider';
+import Error from './components/404';
+
 function App() {
 
   return (
@@ -15,8 +17,9 @@ function App() {
           <Hero />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
-            <Route path="/category/:id" element={<ItemListContainer />} />
+            <Route path="/category/:categoryId" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/*" element={<Error />} />
           </Routes>
           <Footer />
         </CoffeeShopProvider>

@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 
 const NavButton = ({path}) => {
   return (
-    <button className="active:bg-white active:text-black font-bold md:text-xl hover:bg-white/10">
+    <Link to={`/category/${path}`} className="active:bg-white active:text-black font-bold md:text-xl hover:bg-white/10">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="icon icon-tabler icon-tabler-coffee"
@@ -22,7 +24,7 @@ const NavButton = ({path}) => {
         <path d="M16.746 16.726a3 3 0 1 0 .252 -5.555" />
       </svg>
       {path}
-    </button>
+    </Link>
   );
 }
 

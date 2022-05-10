@@ -12,8 +12,8 @@ const Error = () => {
   const countdown = () => {
     setCountDown(countDown - 1);
     if(countDown === 0){
-      navigate('/');
-    }
+    navigate('/');
+  }
   }
   useEffect(() => {
     //Scroll to error message
@@ -21,6 +21,7 @@ const Error = () => {
   },[])
 
   useEffect(() => {
+    
     const interval = setInterval(countdown, 1000);
     return () => clearInterval(interval);
   }, [countDown]);
@@ -39,7 +40,7 @@ const Error = () => {
         alt=""
         className="md:w-1/2 mt-5"
       />
-
+     
      <p>Serás redirigido a la página principal en: {countDown}</p>
     </div>
   );

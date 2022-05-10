@@ -29,9 +29,6 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-transparent/90 rounded-box w-48 lg:w-96 text-slate-300"
           >
             <li>
-              <NavButton path="Ver todo" />
-            </li>
-            <li>
               <NavButton path="Cápsulas" />
             </li>
             <li>

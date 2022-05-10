@@ -1,10 +1,9 @@
-import { useEffect, useState, useContext } from "react";
-import CoffeeShopContext from "../../context/CoffeeShopProvider";
-import CartListItem from "./CartListItem";
-import { priceFormat } from "../../helpers/priceFormat";
+import { useEffect, useState, useContext } from 'react';
+import CoffeeShopContext from '../../context/CoffeeShopProvider';
+import CartListItem from './CartListItem';
+import { priceFormat } from '../../helpers/priceFormat';
 
 const CartWidget = () => {
-
   const { cart, emptyCart } = useContext(CoffeeShopContext);
 
   const [subtotal, setSubtotal] = useState(0);
@@ -12,17 +11,14 @@ const CartWidget = () => {
 
   //Reducer to calculate total articicles
   function totalArticlesQuantity() {
-    let result = cart.reduce(
-      (acc, art) => acc + art.quantity,
-      0
-    );
+    let result = cart.reduce((acc, art) => acc + art.quantity, 0);
     //Update the state
     setTotalArticles(result);
   }
 
   //Reducer to calculate subtotal
   function calculateSubtotal() {
-    let result = cart.reduce((acc, art) => acc + (art.quantity * art.price), 0);
+    let result = cart.reduce((acc, art) => acc + art.quantity * art.price, 0);
     //Update the state
     setSubtotal(result);
   }
@@ -66,22 +62,26 @@ const CartWidget = () => {
           <span className="text-xl text-stone-300">
             Subtotal: <span className="font-bold">{priceFormat(subtotal)}</span>
           </span>
-          <CartListItem />
-          <div className="card-actions mt-3">
-            <button
-              className=" btn-white w-full bg-transparent/40"
-              onClick={emptyCart}
-            >
-              Vaciar Carrito
-            </button>
-            <button className=" btn-white w-full bg-transparent/40">
-              Terminar Compra
-            </button>
-          </div>
+          {cart.length > 0 && (
+            <div>
+              <CartListItem />
+              <div className="card-actions mt-3">
+                <button
+                  className=" btn-white w-full bg-transparent/40"
+                  onClick={emptyCart}
+                >
+                  Vaciar Carrito
+                </button>
+                <button className=" btn-white w-full bg-transparent/40">
+                  Terminar Compra
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default CartWidget
+export default CartWidget;

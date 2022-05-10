@@ -55,16 +55,6 @@ const CoffeeShopProvider = ({ children }) => {
     setCart(cartUpdated);
   };
 
-  const updateQuantity = (item) => {
-    const cartUpdated = cart.map((article) => {
-      if (article.id === item.id) {
-        article.quantity = item.quantity;
-      }
-      return article;
-    });
-    setCart(cartUpdated);
-  };
-
   const emptyCart = () => {
     setCart([]);
   }
@@ -76,7 +66,6 @@ const CoffeeShopProvider = ({ children }) => {
         products,
         addToCart,
         removeFromCart,
-        updateQuantity,
         emptyCart
       }}
     >
