@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer/Footer';
 import { CoffeeShopProvider } from './context/CoffeeShopProvider';
 import Error from './components/404';
+import CheckoutPage from './components/Checkout/CheckoutPage';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/category/:categoryId" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<CheckoutPage />} />
             <Route path="/*" element={<Error />} />
           </Routes>
           <Footer />

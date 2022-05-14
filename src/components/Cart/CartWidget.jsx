@@ -1,10 +1,11 @@
 import { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import CoffeeShopContext from '../../context/CoffeeShopProvider';
 import CartListItem from './CartListItem';
 import { priceFormat } from '../../helpers/priceFormat';
 
 const CartWidget = () => {
-  const { cart, emptyCart } = useContext(CoffeeShopContext);
+  const { cart, clearCart } = useContext(CoffeeShopContext);
 
   const [subtotal, setSubtotal] = useState(0);
   const [totalArticles, setTotalArticles] = useState(0);
@@ -12,14 +13,12 @@ const CartWidget = () => {
   //Reducer to calculate total articicles
   function totalArticlesQuantity() {
     let result = cart.reduce((acc, art) => acc + art.quantity, 0);
-    //Update the state
     setTotalArticles(result);
   }
 
   //Reducer to calculate subtotal
   function calculateSubtotal() {
     let result = cart.reduce((acc, art) => acc + art.quantity * art.price, 0);
-    //Update the state
     setSubtotal(result);
   }
 
@@ -68,13 +67,16 @@ const CartWidget = () => {
               <div className="card-actions mt-3">
                 <button
                   className=" btn-white w-full bg-transparent/40"
-                  onClick={emptyCart}
+                  onClick={clearCart}
                 >
                   Vaciar Carrito
                 </button>
-                <button className=" btn-white w-full bg-transparent/40">
+                <Link
+                  to="/cart"
+                  className=" btn-white w-full text-center bg-transparent/40"
+                >
                   Terminar Compra
-                </button>
+                </Link>
               </div>
             </div>
           )}

@@ -6,7 +6,7 @@ import ItemDetail from './ItemDetail'
 import Error from '../404'
 
 const ItemDetailContainer = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); 
   const [item, setItem] = useState({});
 
   //get the id from the url

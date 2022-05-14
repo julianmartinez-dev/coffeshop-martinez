@@ -17,17 +17,11 @@ const Item = ({ item }) => {
         <h2 className="card-title">{brand}</h2>
         <h3 className=" font-bold text-xl">{name}</h3>
         <p>{description.slice(0, 70) + '...'}</p>
-        <div className="mt-3 flex justify-evenly w-full">
-          <button
-            className="btn-white"
-            onClick={() => addToCart({ ...item, quantity: 1 })}
-          >
-            Comprar
-          </button>{' '}
+        
           <Link to={`/item/${id}`}>
-            <button className="btn-white">Ver mas</button>{' '}
+            <button className="btn-white mt-5">Ver mas</button>{' '}
           </Link>
-        </div>
+        
       </div>
     </div>
   );

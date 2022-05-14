@@ -15,25 +15,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-
-    // if(params.categoryId){
-    //   getProductsByCategory(params.categoryId)
-    //     .then((data) => setProducts(data))
-    //     .catch((error) => console.log(error))
-    //     .finally(() => {
-    //       setLoading(false)
-    //       document.getElementById('items').scrollIntoView({ behavior: 'smooth' });
-    //     });
-    // }else{
-    //   getProducts()
-    //     .then((data) => setProducts(data))
-    //     .catch((error) => console.log(error))
-    //     .finally(() => {
-    //       setLoading(false)
-    //       document.getElementById('items').scrollIntoView({ behavior: 'smooth' });
-    //     });
-    // }
-
+    
     let products;
 
     params.categoryId
