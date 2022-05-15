@@ -7,6 +7,10 @@ const ItemDetail = ({item}) => {
 
   const { addToCart } = useContext(CoffeeShopContext);
 
+  const onAdd = (quantityToAdd) => {
+    addToCart({ ...item, quantity: quantityToAdd })
+  }
+
   return (
     <section className="text-slate-300 overflow-hidden animate__animated animate__fadeIn md:mt-24">
       <div className="container px-5 py-24 mx-auto shadow-xl shadow-slate-300/20">
@@ -41,7 +45,7 @@ const ItemDetail = ({item}) => {
                 {priceFormat(item.price)}
               </p>
 
-              <ItemCount item={item} initial={1} onAdd={addToCart} />
+              <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
             </div>
           </div>
         </div>

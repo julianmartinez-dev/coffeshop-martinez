@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-const ItemCount = ({ initial, onAdd, item }) => {
+const ItemCount = ({ initial, onAdd, stock }) => {
   const [count, setCount] = useState(initial);
-  const [stock, setStock] = useState(item.stock);
-
+  
   const handleAdd = () => {
     if (count < stock) {
       setCount(count + 1);
@@ -12,16 +11,6 @@ const ItemCount = ({ initial, onAdd, item }) => {
   const handleSubstract = () => {
     if (count > 1) {
       setCount(count - 1);
-    }
-  };
-
-  const handleAddToCart = () => {
-    if (stock > 0) {
-      onAdd({ ...item, quantity: count });
-      setStock((stock) => stock - count);
-      setCount(initial);
-    } else {
-      alert('No hay stock disponible');
     }
   };
 
@@ -63,7 +52,10 @@ const ItemCount = ({ initial, onAdd, item }) => {
 
       <button
         className="flex ml-auto items-center gap-2 font-bold btn-cafe btn-white"
-        onClick={handleAddToCart}
+        onClick={() => {
+          onAdd(count) 
+          setCount(initial)
+        }}
       >
         Comprar
       </button>
