@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import CoffeeShopContext from '../../context/CoffeeShopProvider';
 import { priceFormat } from '../../helpers/priceFormat';
 import ItemCount from '../ItemCount/ItemCount';
@@ -7,8 +8,11 @@ const ItemDetail = ({item}) => {
 
   const { addToCart } = useContext(CoffeeShopContext);
 
+  const [isInCart, setIsInCart] = useState(false);
+
   const onAdd = (quantityToAdd) => {
     addToCart({ ...item, quantity: quantityToAdd })
+    setIsInCart(true);
   }
 
   return (
@@ -45,7 +49,18 @@ const ItemDetail = ({item}) => {
                 {priceFormat(item.price)}
               </p>
 
-              <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+
+              {isInCart 
+                ? 
+                  <Link
+                    className="flex ml-auto items-center gap-2 font-bold btn-cafe btn-white animate__animated animate__fadeIn "
+                    to="/cart"
+                  >
+                    Terminar Compra
+                  </Link>
+                : 
+                <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+              }
             </div>
           </div>
         </div>
