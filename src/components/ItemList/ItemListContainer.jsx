@@ -6,6 +6,8 @@ import ItemList from "./ItemList";
 import Spinner from "../spinner/Spinner";
 import Error from "../404";
 
+// import { collection, getDocs, getFirestore } from 'firebase/firestore'
+
 const ItemListContainer = () => {
 
   const [products, setProducts] = useState([]);
@@ -31,6 +33,16 @@ const ItemListContainer = () => {
         });
     
   },[params])
+
+  // useEffect(() => {
+  //   const db = getFirestore();
+  //   const itemCollection = collection(db,'productos')
+  //   getDocs(itemCollection)
+  //     .then( snapshot => {
+  //       const products = snapshot.docs.map((doc) => ({id: doc.id , ...doc.data()}));
+  //       console.log(products);
+  //     })
+  // },[])
 
 
   if (!products.length && !loading) {

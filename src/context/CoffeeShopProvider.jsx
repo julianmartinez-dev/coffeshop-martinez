@@ -6,10 +6,14 @@ const CoffeeShopProvider = ({ children }) => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem('coffeeCart')) || []
   );
+    const [subtotal, setSubtotal] = useState(0);
+    const [totalArticles, setTotalArticles] = useState(0);
 
   //set cart to local storage on change
   useEffect(() => {
     localStorage.setItem('coffeeCart', JSON.stringify(cart));
+    setSubtotal(calculateSubtotal());
+    setTotalArticles(totalArticlesQuantity());
   }, [cart]);
 
   const addToCart = (item) => {
@@ -49,6 +53,16 @@ const CoffeeShopProvider = ({ children }) => {
     return cart.some((article) => article.id === id);
   };
 
+  //Reducer to calculate total articicles
+  function totalArticlesQuantity() {
+    return cart.reduce((acc, art) => acc + art.quantity, 0);
+  }
+
+  //Reducer to calculate subtotal
+  function calculateSubtotal() {
+    return cart.reduce((acc, art) => acc + art.quantity * art.price, 0);
+  }
+
   return (
     <CoffeeShopContext.Provider
       value={{
@@ -56,6 +70,8 @@ const CoffeeShopProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         clearCart,
+        subtotal,
+        totalArticles,
       }}
     >
       {children}

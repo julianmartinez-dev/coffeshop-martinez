@@ -5,27 +5,7 @@ import CartListItem from './CartListItem';
 import { priceFormat } from '../../helpers/priceFormat';
 
 const CartWidget = () => {
-  const { cart, clearCart } = useContext(CoffeeShopContext);
-
-  const [subtotal, setSubtotal] = useState(0);
-  const [totalArticles, setTotalArticles] = useState(0);
-
-  //Reducer to calculate total articicles
-  function totalArticlesQuantity() {
-    let result = cart.reduce((acc, art) => acc + art.quantity, 0);
-    setTotalArticles(result);
-  }
-
-  //Reducer to calculate subtotal
-  function calculateSubtotal() {
-    let result = cart.reduce((acc, art) => acc + art.quantity * art.price, 0);
-    setSubtotal(result);
-  }
-
-  useEffect(() => {
-    totalArticlesQuantity();
-    calculateSubtotal();
-  }, [cart]);
+  const { cart, clearCart, subtotal, totalArticles } = useContext(CoffeeShopContext);
 
   return (
     <div className="dropdown dropdown-end">
