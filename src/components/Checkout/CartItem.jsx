@@ -26,9 +26,9 @@ const CartItem = ({item, onDelete}) => {
     <tr className='text-center'>
 
       <td>
-        <div class="flex items-center space-x-3">
-          <div class="avatar">
-            <div class="mask mask-squircle w-24 h-24">
+        <div className="flex items-center space-x-3">
+          <div className="avatar">
+            <div className="mask mask-squircle w-24 h-24">
               <img
                 src={`/img/${slug}.jpg`}
                 alt={`imagen de ${name}`}
@@ -36,8 +36,8 @@ const CartItem = ({item, onDelete}) => {
             </div>
           </div>
           <div className='pl-10'>
-            <div class="font-bold">{name}</div>
-            <div class="text-sm opacity-50">{brand}</div>
+            <div className="font-bold">{name}</div>
+            <div className="text-sm opacity-50">{brand}</div>
           </div>
         </div>
       </td>

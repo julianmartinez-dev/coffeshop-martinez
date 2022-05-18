@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getItemByID } from '../../helpers/getItemByID'
+import { getItemByID } from '../../firebase'
 import Spinner from '../spinner/Spinner'
 import ItemDetail from './ItemDetail'
 import Error from '../404'
@@ -14,10 +14,11 @@ const ItemDetailContainer = () => {
 
   //get the item from the api and set it to the state
   useEffect(() => {
-    getItemByID(Number(id))
-      .then((data) => setItem(data))
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false));
+    setLoading(true);
+    getItemByID(id).then((data) => {
+      setItem(data);
+      setLoading(false);
+    });
   }, []);
 
   if(!item){

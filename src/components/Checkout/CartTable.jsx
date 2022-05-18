@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 
 const CartTable = ({cart, onDelete}) => {
   return (
-    <table class=" w-full">
+    <table className=" w-full">
       <thead>
         <tr className="border-b-2">
           <th>Producto</th>

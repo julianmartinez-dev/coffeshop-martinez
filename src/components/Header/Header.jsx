@@ -29,10 +29,10 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-transparent/90 rounded-box w-48 lg:w-96 text-slate-300"
           >
             <li>
-              <NavButton path="Cápsulas" />
+              <NavButton path="Capsulas" />
             </li>
             <li>
-              <NavButton path="Café Molido" />
+              <NavButton path="Cafe Molido" />
             </li>
             <li>
               <NavButton path="Descafeinados" />
@@ -41,7 +41,7 @@ const Header = () => {
               <NavButton path="Accesorios" />
             </li>
             <li>
-              <NavButton path="Máquinas" />
+              <NavButton path="Maquinas" />
             </li>
           </ul>
         </div>

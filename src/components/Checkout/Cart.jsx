@@ -15,7 +15,7 @@ const Cart = () => {
 
   return (
     
-      <div class="overflow-x-auto  md:w-1/2 mx-auto mt-10 text-slate-300">
+      <div className="overflow-x-auto  md:w-1/2 mx-auto mt-10 text-slate-300">
         {
           cart.length
           ? 
