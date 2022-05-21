@@ -1,8 +1,8 @@
-import React from 'react'
+import { priceFormat } from "../../helpers/priceFormat";
 
 const CheckoutWidget = ({clearCart,totalArticles,subtotal}) => {
   return (
-    <div className="flex flex-col md:flex-row justify-between mt-10">
+    <div className="flex flex-col md:flex-row justify-between mt-10 border-t-2">
       <button
         className="font-medium text-slate-300 tracking-wider leading-loose flex flex-row items-center self-start p-3"
         onClick={clearCart}
@@ -18,9 +18,9 @@ const CheckoutWidget = ({clearCart,totalArticles,subtotal}) => {
           <p>Gastos de envio:</p>
           <p>Gratis</p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between text-2xl mt-3">
           <p className="uppercase font-bold">Total a pagar</p>
-          <p>{subtotal}</p>
+          <p>{priceFormat(subtotal)}</p>
         </div>
         <button className="btn-white w-full text-center bg-transparent/40 mt-3">
           Checkout
