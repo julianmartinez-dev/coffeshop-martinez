@@ -1,4 +1,4 @@
-import Item from "./Item"
+import Item from './Item';
 
 const ItemList = ({ products }) => {
   return (
@@ -9,10 +9,9 @@ const ItemList = ({ products }) => {
             <Item key={product.id} item={product} />
           ))}
         </div>
-        
       </div>
     </section>
   );
-}
+};
 
-export default ItemList
+export default ItemList;

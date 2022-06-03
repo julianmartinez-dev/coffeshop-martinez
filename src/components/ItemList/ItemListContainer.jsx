@@ -6,7 +6,6 @@ import Error from '../404';
 
 import { getProducts, getProductsByCategory } from '../../firebase';
 
-
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

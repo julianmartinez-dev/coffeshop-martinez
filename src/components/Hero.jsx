@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Hero = () => {
   return (
@@ -9,15 +9,13 @@ const Hero = () => {
         </p>
       </div>
 
-
       <img
         src="/img/pexels-toni-cuenca-585754.jpg"
         alt="hero image"
         className="h-screen w-full object-cover"
       />
-      
     </div>
   );
-}
+};
 
-export default Hero
+export default Hero;

@@ -1,19 +1,22 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CoffeeShopContext from '../../context/CoffeeShopProvider';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { successToast } from '../../helpers/showToast';
 import { priceFormat } from '../../helpers/priceFormat';
 import ItemCount from '../ItemCount/ItemCount';
 
-const ItemDetail = ({item}) => {
-
+const ItemDetail = ({ item }) => {
   const { addToCart } = useContext(CoffeeShopContext);
 
   const [isInCart, setIsInCart] = useState(false);
 
   const onAdd = (quantityToAdd) => {
-    addToCart({ ...item, quantity: quantityToAdd })
+    addToCart({ ...item, quantity: quantityToAdd });
     setIsInCart(true);
-  }
+    successToast(`${item.name} agregado al carrito`);
+  };
 
   return (
     <section className="text-slate-300 overflow-hidden animate__animated animate__fadeIn md:mt-24">
@@ -49,24 +52,34 @@ const ItemDetail = ({item}) => {
                 {priceFormat(item.price)}
               </p>
 
-
-              {isInCart 
-                ? 
-                  <Link
-                    className="flex ml-auto items-center gap-2 font-bold btn-cafe btn-white animate__animated animate__fadeIn "
-                    to="/cart"
-                  >
-                    Terminar Compra
-                  </Link>
-                : 
+              {isInCart ? (
+                <Link
+                  className="flex ml-auto items-center gap-2 font-bold btn-cafe btn-white animate__animated animate__fadeIn "
+                  to="/cart"
+                >
+                  Terminar Compra
+                </Link>
+              ) : (
                 <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
-              }
+              )}
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </section>
   );
-}
+};
 
-export default ItemDetail
+export default ItemDetail;

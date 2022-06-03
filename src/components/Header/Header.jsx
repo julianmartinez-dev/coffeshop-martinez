@@ -35,9 +35,6 @@ const Header = () => {
               <NavButton path="Cafe Molido" />
             </li>
             <li>
-              <NavButton path="Descafeinados" />
-            </li>
-            <li>
               <NavButton path="Accesorios" />
             </li>
             <li>

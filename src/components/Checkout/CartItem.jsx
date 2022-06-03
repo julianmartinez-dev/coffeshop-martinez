@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { priceFormat } from '../../helpers/priceFormat';
 
 const deleteIcon = (
@@ -18,45 +18,36 @@ const deleteIcon = (
   </svg>
 );
 
-const CartItem = ({item, onDelete}) => {
-
-    const { brand,name, price, quantity, slug } = item;
+const CartItem = ({ item, onDelete }) => {
+  const { brand, name, price, quantity, slug } = item;
 
   return (
-    <tr className='text-center'>
-
+    <tr className="text-center">
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
-            <div className="mask mask-squircle w-24 h-24">
-              <img
-                src={`/img/${slug}.jpg`}
-                alt={`imagen de ${name}`}
-              />
+            <div className="mask mask-squircle w-12 md:w-24 h-24">
+              <img src={`/img/${slug}.jpg`} alt={`imagen de ${name}`} />
             </div>
           </div>
-          <div className='pl-10'>
+          <div className="md:pl-10">
             <div className="font-bold">{name}</div>
             <div className="text-sm opacity-50">{brand}</div>
           </div>
         </div>
       </td>
       <td>
-       <p>{priceFormat(price)}</p>
+        <p>{priceFormat(price)}</p>
       </td>
       <td>{quantity}</td>
       <td>
-        <p>{priceFormat( price * quantity )}</p>
+        <p>{priceFormat(price * quantity)}</p>
       </td>
       <td>
-          <button
-            onClick={() => onDelete(item)}
-          >
-              {deleteIcon}
-          </button>
+        <button onClick={() => onDelete(item)}>{deleteIcon}</button>
       </td>
     </tr>
   );
-}
+};
 
-export default CartItem
+export default CartItem;

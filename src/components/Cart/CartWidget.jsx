@@ -1,11 +1,12 @@
-import { useEffect, useState, useContext } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CoffeeShopContext from '../../context/CoffeeShopProvider';
 import CartListItem from './CartListItem';
 import { priceFormat } from '../../helpers/priceFormat';
 
 const CartWidget = () => {
-  const { cart, clearCart, subtotal, totalArticles } = useContext(CoffeeShopContext);
+  const { cart, clearCart, subtotal, totalArticles } =
+    useContext(CoffeeShopContext);
 
   return (
     <div className="dropdown dropdown-end">

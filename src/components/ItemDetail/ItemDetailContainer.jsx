@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { getItemByID } from '../../firebase'
-import Spinner from '../spinner/Spinner'
-import ItemDetail from './ItemDetail'
-import Error from '../404'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getItemByID } from '../../firebase';
+import Spinner from '../spinner/Spinner';
+import ItemDetail from './ItemDetail';
+import Error from '../404';
 
 const ItemDetailContainer = () => {
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   const [item, setItem] = useState({});
 
   //get the id from the url
@@ -21,17 +21,11 @@ const ItemDetailContainer = () => {
     });
   }, []);
 
-  if(!item){
-      return (
-        <Error />
-      );
+  if (!item) {
+    return <Error />;
   }
 
-  return (
-    <div>
-      {loading ? <Spinner /> : <ItemDetail item={item} />}
-    </div>
-  );
-}
+  return <div>{loading ? <Spinner /> : <ItemDetail item={item} />}</div>;
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
-import CoffeeShopContext from "../../context/CoffeeShopProvider";
-import { useContext } from "react";
+import { Link } from 'react-router-dom';
+import CoffeeShopContext from '../../context/CoffeeShopProvider';
+import { useContext } from 'react';
 
 const Item = ({ item }) => {
-
-  const { addToCart } = useContext(CoffeeShopContext)
+  const { addToCart } = useContext(CoffeeShopContext);
 
   const { brand, name, description, slug, id } = item;
 
@@ -17,11 +16,10 @@ const Item = ({ item }) => {
         <h2 className="card-title">{brand}</h2>
         <h3 className=" font-bold text-xl">{name}</h3>
         <p>{description.slice(0, 70) + '...'}</p>
-        
-          <Link to={`/item/${id}`}>
-            <button className="btn-white mt-5">Ver mas</button>{' '}
-          </Link>
-        
+
+        <Link to={`/item/${id}`}>
+          <button className="btn-white mt-5">Ver mas</button>{' '}
+        </Link>
       </div>
     </div>
   );

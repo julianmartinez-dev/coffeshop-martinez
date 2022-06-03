@@ -6,8 +6,8 @@ const CoffeeShopProvider = ({ children }) => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem('coffeeCart')) || []
   );
-    const [subtotal, setSubtotal] = useState(0);
-    const [totalArticles, setTotalArticles] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
+  const [totalArticles, setTotalArticles] = useState(0);
 
   //set cart to local storage on change
   useEffect(() => {

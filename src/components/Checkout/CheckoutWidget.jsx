@@ -1,33 +1,26 @@
-import { priceFormat } from "../../helpers/priceFormat";
+import { priceFormat } from '../../helpers/priceFormat';
 
-const CheckoutWidget = ({clearCart,totalArticles,subtotal}) => {
+const CheckoutWidget = ({ totalArticles, subtotal, id = '' }) => {
   return (
-    <div className="flex flex-col md:flex-row justify-between mt-10 border-t-2">
-      <button
-        className="font-medium text-slate-300 tracking-wider leading-loose flex flex-row items-center self-start p-3"
-        onClick={clearCart}
-      >
-        x vaciar carrito
-      </button>
-      <div className="p-3 md:w-2/5 justify-between">
-        <div className="flex justify-between">
-          <p>Cantidad de Items:</p>
-          <p>{totalArticles}</p>
-        </div>
-        <div className="flex justify-between">
-          <p>Gastos de envio:</p>
-          <p>Gratis</p>
-        </div>
-        <div className="flex justify-between text-2xl mt-3">
-          <p className="uppercase font-bold">Total a pagar</p>
-          <p>{priceFormat(subtotal)}</p>
-        </div>
-        <button className="btn-white w-full text-center bg-transparent/40 mt-3">
-          Checkout
-        </button>
+    <div className="md:p-10 p-2 flex mt-10 md:mt-0 flex-col justify-center md:w-2/3 mx-auto bg-slate-700/10 text-2xl text-gray-50">
+      <h1 className="text-3xl font-bold text-center md:mb-16">
+        Resumen del pedido:
+      </h1>
+      <div className="flex justify-between">
+        <p>Cantidad de Items:</p>
+        <p>{totalArticles}</p>
       </div>
+      <div className="flex justify-between">
+        <p>Gastos de envio:</p>
+        <p>Gratis</p>
+      </div>
+      <div className="flex justify-between items-center text-2xl mt-5 pt-5 border-t-2 font-bold">
+        <p className="uppercase ">Total a pagar</p>
+        <p className="text-3xl">{priceFormat(subtotal)}</p>
+      </div>
+      <p>{id}</p>
     </div>
   );
-}
+};
 
-export default CheckoutWidget
+export default CheckoutWidget;

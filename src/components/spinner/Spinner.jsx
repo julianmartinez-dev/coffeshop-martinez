@@ -1,4 +1,4 @@
-import './spinner.css'
+import './spinner.css';
 
 const Spinner = () => {
   return (
@@ -8,6 +8,6 @@ const Spinner = () => {
       <div className="bounce3"></div>
     </div>
   );
-}
+};
 
-export default Spinner
+export default Spinner;
