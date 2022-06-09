@@ -54,7 +54,7 @@ const ItemDetail = ({ item }) => {
 
               {isInCart ? (
                 <Link
-                  className="flex ml-auto items-center gap-2 font-bold btn-cafe btn-white animate__animated animate__fadeIn "
+                  className="btn-white flex justify-center animate__animated animate__fadeIn "
                   to="/cart"
                 >
                   Terminar Compra

@@ -63,7 +63,7 @@ const Form = ({onSubmit}) => {
             Teléfono
           </label>
           <input
-            type="phone"
+            type="tel"
             name="phone"
             id="phone"
             autoComplete="off"

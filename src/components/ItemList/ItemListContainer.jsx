@@ -20,12 +20,12 @@ const ItemListContainer = () => {
       ? (products = getProductsByCategory(params.categoryId))
       : (products = getProducts());
 
+   
     products
       .then((data) => setProducts(data))
       .catch((error) => console.log(error))
       .finally(() => {
         setLoading(false);
-        document.getElementById('items').scrollIntoView({ behavior: 'smooth' });
       });
   }, [params]);
 

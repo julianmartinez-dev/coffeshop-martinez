@@ -10,7 +10,7 @@ body{
 
 @layer base {
     .btn-white {
-        @apply border-2 px-6 py-2 text-slate-300 transition-colors duration-300 uppercase font-bold;
+        @apply border-2 px-6 py-2 text-slate-300 transition-colors duration-300 uppercase font-bold text-center;
         @apply hover:bg-gray-50 hover:text-black ;
     }
     

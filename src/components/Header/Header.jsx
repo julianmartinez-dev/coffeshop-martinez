@@ -4,11 +4,17 @@ import CartWidget from '../Cart/CartWidget';
 import NavButton from './NavButton';
 
 const Header = () => {
+
+
   return (
     <header className="navbar fixed mx-auto bg-transparent/40 z-10  h-32 md:px-32 backdrop-blur-sm">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex="0" className="btn btn-ghost btn-circle">
+  
+          <label
+            tabIndex="0"
+            className="btn btn-ghost btn-circle "
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8"
@@ -26,7 +32,8 @@ const Header = () => {
           </label>
           <ul
             tabIndex="0"
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-transparent/90 rounded-box w-48 lg:w-96 text-slate-300"
+         
+            className="menu menu-compact dropdown-content p-2 shadow bg-transparent/90 rounded-box w-48 lg:w-96 text-slate-300"
           >
             <li>
               <NavButton path="Capsulas" />

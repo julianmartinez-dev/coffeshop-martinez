@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 import { initializeApp } from 'firebase/app'
+import { registerSW } from 'virtual:pwa-register'
+
+const updateSW = registerSW({
+  onNeedRefresh() {},
+  onOfflineReady() {},
+})
 
 
 const firebaseConfig = {

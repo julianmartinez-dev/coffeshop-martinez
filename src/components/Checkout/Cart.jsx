@@ -1,21 +1,18 @@
 import { useContext, useState, useEffect } from 'react';
 import { placeOrder } from '../../firebase';
 import CoffeeShopContext from '../../context/CoffeeShopProvider';
-import CartItem from './CartItem';
 import CartTable from './CartTable';
 import CheckoutWidget from './CheckoutWidget';
 import EmptyCart from './EmptyCart';
 import Form from './Form';
-
 import { Slide, toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import InfoOrder from './InfoOrder';
 
 const Cart = () => {
   const { cart, removeFromCart, subtotal, totalArticles, clearCart } =
     useContext(CoffeeShopContext);
 
-  const [idCompra, setIdCompra] = useState(null);
+  const [purchaseID, setPurchaseID] = useState(null);
 
   useEffect(() => {
     //Scroll to main content
@@ -27,7 +24,7 @@ const Cart = () => {
   };
 
   const onSubmit = async (name, lastName, email) => {
-    const order = cart.map((item) => ({
+    const items = cart.map((item) => ({
       name: item.name,
       price: item.price,
       quantity: item.quantity,
@@ -42,15 +39,16 @@ const Cart = () => {
         autoClose: true,
         transition: Slide,
       });
-      //Send order to firebase
-      const numeroOrden = await placeOrder({
-        order,
+      //Send order to firebase and get the id
+      const firebaseOrderID = await placeOrder({
+        items,
         client: `${name} ${lastName}`,
         email,
+        date: Date.now(),
         status: 'Generada'
       });
       toast.update(id, {
-        render: 'Orden # ' + numeroOrden.id + ' procesada',
+        render: 'Orden # ' + firebaseOrderID.id + ' procesada con éxito.',
         isLoading: false,
         type: 'success',
         closeOnClick: true,
@@ -58,7 +56,7 @@ const Cart = () => {
         transition: Slide,
       });
 
-      setIdCompra(numeroOrden.id);
+      setPurchaseID(firebaseOrderID.id);
       clearCart();
     } catch (error) {
       toast.update(id, {
@@ -70,7 +68,7 @@ const Cart = () => {
     }
   };
   //if the cart is empty or the purchase is not processed
-  if (cart.length === 0 && idCompra === null) {
+  if (cart.length === 0 && purchaseID === null) {
     return (
       <main>
         <div className="p-3 md:p-0 md:w-1/2 mx-auto mt-10">
@@ -80,7 +78,7 @@ const Cart = () => {
     );
   }
   //If the cart is not empty or the purchase is processed
-  if (cart.length || idCompra) {
+  if (cart.length || purchaseID) {
     return (
       <main>
         {cart.length ? (
@@ -96,7 +94,7 @@ const Cart = () => {
 
         <div className="mt-10">
           {/* if the purchase is not processes*/}
-          {idCompra === null ? (
+          {purchaseID === null ? (
             <div className="px-3 md:grid grid-cols-2 md:w-4/5 mx-auto">
               <CheckoutWidget
                 totalArticles={totalArticles}
@@ -106,7 +104,7 @@ const Cart = () => {
             </div>
           ) : (
             /* If the purchase is processed show the final detail */
-            <InfoOrder id={idCompra} />
+            <InfoOrder id={purchaseID} />
           )}
         </div>
 
