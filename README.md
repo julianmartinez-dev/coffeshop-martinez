@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/julianmartinez-dev/coffeshop-martinez">
+  <a href="https://coffeshop-martinez.vercel.app/">
     <img src="public/img/screenshots/logocoffeeshop.png" alt="Logo" width="275" height="80">
   </a>
 
@@ -49,26 +49,31 @@
   </p>
 </div>
 
+<br>
+<br>
 
 
-<!-- TABLE OF CONTENTS -->
-<details>
+## Table of contents
+ <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#user-stories">User Stories</a></li>
+        <li><a href="#base-requirements">Base Requirements</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#for-developers">For developers</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Gif Demo</a></li>
+    <li><a href="#usage">Videos Demo</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -76,6 +81,10 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+
+<br>
+<br>
+
 
 
 
@@ -147,10 +156,28 @@ Input para email y lógica de repetir el email 2 veces (a excepción de que real
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- USAGE EXAMPLES -->
+
+## Video Demo
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+ ```sh
+ Video demo 1 
+ ```
+
+  ```sh
+ Video demo pwa
+ ```
+
+  ```sh
+ Video demo 1 
+ ```
+ 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- For developers -->
+## For Developers
 
 To get a local copy up and running follow these simple example steps.
 
@@ -192,39 +219,19 @@ This is an example of how to list things you need to use the software and how to
 
 To run this project, you will need to add the following environment variables to your .env file
 
-
-`VITE_FIREBASE_AUTHDOMAIN`
-`VITE_FIREBASE_PROJECTID`
-`VITE_FIREBASE_STORAGEBUCKET`
-`VITE_FIREBASE_MESSAGINGSENDERID`
-`VITE_FIREBASE_APPID`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-
-<!-- USAGE EXAMPLES -->
-## Gif Demo
-
- <img src="public/img/screenshots/screenshot.gif" alt="demo gif">
-
-## Video Demo
-
- ```sh
- Video demo 1 
- ```
-
-  ```sh
- Video demo pwa
- ```
-
-  ```sh
- Video demo 1 
- ```
- 
+```
+VITE_FIREBASE_AUTHDOMAIN
+VITE_FIREBASE_PROJECTID
+VITE_FIREBASE_STORAGEBUCKET
+VITE_FIREBASE_MESSAGINGSENDERID
+VITE_FIREBASE_APPID
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
 
 
 
