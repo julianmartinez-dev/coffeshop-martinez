@@ -159,19 +159,15 @@ Input para email y lógica de repetir el email 2 veces (a excepción de que real
 <!-- USAGE EXAMPLES -->
 
 ## Video Demo
+ 
+
+https://user-images.githubusercontent.com/93665971/172989458-d2baea59-c427-4b3b-8ced-54c07846369d.mp4
+
+https://user-images.githubusercontent.com/93665971/172989446-a93e685d-9112-4a46-89f8-abebf55e1a50.mp4
+
+https://user-images.githubusercontent.com/93665971/172989441-6d050229-2f6c-41d6-ba85-27c1ea522b94.mp4
 
 
- ```sh
- Video demo 1 
- ```
-
-  ```sh
- Video demo pwa
- ```
-
-  ```sh
- Video demo 1 
- ```
  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
