@@ -84,17 +84,66 @@
 
 ![Product Name Screen Shot][product-screenshot]
 
+## Description
+
+Para el curso de ReactJs de Coderhouse he desarrollado una plataforma ecommerce para la venta de café y articulos relacionados. La plataforma esta desarrollada en ReactJS y esta disponible en el repositorio de GitHub, desplegada en Vercel, los datos son almacenados en Firebase. Para el desarrollo de la plataforma he utilizado librerias tales como: Tailwindcss para el desarrollo de la apariencia junto con DaisyUI que es una libreria de componentes basados en tailwindcss, React-Router para la navegacion.
+ Tambien utilicé una libreria de llamada React-Toastify para darle un feedback al usuario al realizar una accion o recibir alguna respuesta del servidor.
+ Como un extra agregué la capacidad de poder descargar una PWA para la plataforma mediante el navegador de Google Chrome, usando Vite-Plugin-PWA.
+
+
+
+## User stories
+
+-  Un usuario debe poder ingresar, navegar por los productos e ir a sus detalles.
+-  Desde el detalle se debe poder ver la descripción, foto y precio e ingresarlo al carrito. 
+-  Una vez que el carrito tenga al menos un producto, se deberá visualizar un listado compacto de la orden con el precio total. 
+-  Al ingresar su nombre, apellido, teléfono e e-mail (ingresándolo dos veces para corroborar que sea correcto), debe activarse el botón de ‘realizar compra’.
+-  Al clickear ‘realizar compra’ debe guardarse en la base de datos una orden que tenga todos los productos, la fecha y dar feedback del número de orden.
+
+### Base Requirements
+- Inicio: Al momento de ingresar a la app en la ruta base ‘/’
+Visualizar -como mínimo- un set de productos disponibles para la compra.
+Contar con algún acceso visible a la vista de carrito que debe alojarse en el route <b>/cart.</b>
+Acceder a un menú desplegable que contendrá las categorías. Al clickear en una, debe navegar a la lista de productos de la misma mediante un route /categories/:categoryId. Éste invocará la misma vista que el home, pero visualizando sólamente productos de esa categoría.
+
+- Flow: Al clickear un ítem del listado debe navegar a la ruta /item/:id, donde id es el id del item (generado por firebase), y ver la descripción del producto ( foto, precio, selector de cantidad). Si se ingresa a /item/:id y el producto no existe en firebase, debemos responder un mensaje adecuado que indique algo relacionado a que el producto no existe.
+- Firebase:
+<u><b>Implementar al menos dos colecciones:</b></u><br>
+- <u><b>items: catálogo completo</b></u>
+Link para foto (puede almacenarse de modo estático en la página en una subruta /images/:itemid )
+Precio unitario
+Descripción (sólo se ve en detalle)
+Categoria (id a mano para versión estática, o id de firebase para versión dinámica -opcional-)
+- <u><b>orders:</b></u> las órdenes generadas, que deben incluir los productos, descripciones y los precios al momento de la compra. 
+- Las órdenes deben poder tener items surtidos, cada uno con su cantidad. Por ejemplo: remeras x 2 y gorra x 1
+id, items, fecha, estado ( por defecto en ‘generada’)
+- El cart debe ser accesible durante toda la experiencia y tener una indicación de la cantidad de items incluidos agregados (ej. si hay un ítem con dos unidades y un ítem con una unidad, debe decir ‘tres’).
+- Checkout mínimo:
+Items con sus cantidades
+Total de la orden
+Input para nombre, apellido y teléfono
+Input para email y lógica de repetir el email 2 veces (a excepción de que realicen el desafío extra de auth, en ese caso no sería necesario)
+- Finalizada la orden, debo recibir mi order id con el id del objeto de firebase.
+- La navegabilidad debe ocurrir utilizando el router, y no href’s o location.
+- Por cada librería pública extra que utilices, deberás incluir en algún archivo el link al proyecto, y una justificación de por qué agrega valor.
+
+
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-### Built With
+# Built With
 
 * [React.js](https://reactjs.org/)
 * [Vite](https://vitejs.dev/)
 * [Tailwind](https://tailwindcss.com/)
 * [DaisyUI](https://daisyui.com/)
+* [Firebase](https://firebase.google.com/)
+* [React-Toastify](https://www.npmjs.com/package/react-toastify)
+* [Vite-Plugin-PWA](https://vite-plugin-pwa.netlify.app/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -139,6 +188,20 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+
+`VITE_FIREBASE_AUTHDOMAIN`
+`VITE_FIREBASE_PROJECTID`
+`VITE_FIREBASE_STORAGEBUCKET`
+`VITE_FIREBASE_MESSAGINGSENDERID`
+`VITE_FIREBASE_APPID`
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
 
 
 <!-- USAGE EXAMPLES -->
@@ -146,7 +209,20 @@ This is an example of how to list things you need to use the software and how to
 
  <img src="public/img/screenshots/screenshot.gif" alt="demo gif">
 
+## Video Demo
 
+ ```sh
+ Video demo 1 
+ ```
+
+  ```sh
+ Video demo pwa
+ ```
+
+  ```sh
+ Video demo 1 
+ ```
+ 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -157,7 +233,11 @@ This is an example of how to list things you need to use the software and how to
 
 -  Se inicia el proyecto y se agrega stock de productos localmente
 -  Se agrega react-router-dom para la navegación.
--  Se cambia la UI
+-  Se cambia la UI.
+-  Se agrega carrito de compras.
+-  Se integra con backend en Firebase.
+-  Se agrega checkout.
+-  Se agrega pwa.
 
 See the [open issues](https://github.com/julianmartinez-dev/coffeshop-martinez/issues) for a full list of proposed features (and known issues).
 
@@ -220,3 +300,5 @@ Project Link: [https://github.com/julianmartinez-dev/coffeshop-martinez](https:/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/julian-martinez-dev/
 [product-screenshot]: /public/img/screenshots/home.png
+[Watch the video]: https://streamable.com/2766mi
+[@twitter_handle]: https://twitter.com/julmartinezdev
